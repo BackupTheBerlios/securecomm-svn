@@ -1,0 +1,16 @@
+<projectDescription>
+  <name>frontend-sa</name>
+  <comment/>
+  <projects>
+    <project>frontend-consumer-su</project>
+    <project>frontend-handler-su</project>
+  </projects>
+  <buildSpec>
+    <buildCommand>
+      <name>org.eclipse.jdt.core.javabuilder</name>
+    </buildCommand>
+  </buildSpec>
+  <natures>
+    <nature>org.eclipse.jdt.core.javanature</nature>
+  </natures>
+</projectDescription>

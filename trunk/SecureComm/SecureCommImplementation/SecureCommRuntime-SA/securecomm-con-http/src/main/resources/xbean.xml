@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:http="http://servicemix.apache.org/http/1.0"
+       xmlns:soap="http://servicemix.apache.org/soap/1.0"
+       xmlns:secCommNode2="urn:qualipso:wp32:secCommNode2">
+
+  <classpath>
+    <location>.</location>
+  </classpath>
+
+  <!-- ##### TELCOSERVICE Example START ##### -->
+  <!-- ### IN-ONLY connection ### -->
+  <!--
+  <http:endpoint service="secCommNode2:secCommNode2ServerServiceConIn"
+                 endpoint="secCommNode2HttpSecConInServerEnd"
+		 targetService="secCommNode2:camelin"
+		 role="consumer"
+                 locationURI="http://127.0.0.1:8291/secConIn/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-only"
+                 soap="true" 
+		 soapVersion="1.1" 
+		 > 
+    
+    <http:policies>
+      <soap:ws-security receiveAction="Signature"  username="serveront" >
+	<soap:crypto>
+	   <bean class="org.apache.servicemix.soap.handlers.security.StandaloneCrypto">
+	      <property name="keyStoreUrl" value="classpath:serveront.keystore" />
+	      <property name="keyStorePassword" value="123456" />
+	      <property name="keyPassword" value="123456"/>
+	   </bean>
+	 </soap:crypto>
+       </soap:ws-security>
+    </http:policies>
+
+   </http:endpoint> 
+   -->
+
+  <!-- ### IN-OUT connection ### -->
+  <!-- 
+  <http:endpoint service="secCommNode2:secCommNode2ServerServiceConInOut"
+                 endpoint="secCommNode2HttpSecConInOutServerEnd"
+		 targetService="secCommNode2:camelinout"
+                 role="consumer" 
+                 locationURI="http://127.0.0.1:8292/secConInOut/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+                 soap="true" 
+		 soapVersion="1.1"
+		 >
+
+	<http:policies>
+	    <soap:ws-security receiveAction="Signature"  username="serveront" >
+
+		<soap:crypto>
+		    <bean class="org.apache.servicemix.soap.handlers.security.StandaloneCrypto">
+	              <property name="keyStoreUrl" value="classpath:serveront.keystore" />
+	              <property name="keyStorePassword" value="123456" />
+	              <property name="keyPassword" value="123456"/>
+	            </bean>
+	          </soap:crypto>
+		</soap:ws-security>
+	  </http:policies>
+   </http:endpoint>
+   -->
+   <!-- ##### TELCOSERVICE Example END ##### -->
+
+</beans>

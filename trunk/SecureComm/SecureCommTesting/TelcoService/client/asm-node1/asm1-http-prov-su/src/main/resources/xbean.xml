@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:http="http://servicemix.apache.org/http/1.0"
+       xmlns:soap="http://servicemix.apache.org/soap/1.0"
+       xmlns:asm1="urn:qualipso:wp32:asm1">
+
+<classpath>
+	<location>.</location>
+</classpath>
+
+<bean id="propertyPlaceholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="classpath:asm1.properties" />
+</bean>
+
+  <!-- ##### TELCOSERVICE Example START ##### -->
+  <!-- ### IN-ONLY connection ### -->
+  <!--
+  <http:endpoint service="asm1:asm1ClientService"
+                 endpoint="asm1HttpSecProvInEnd"
+                 role="provider"
+                 locationURI="http://127.0.0.1:8291/secConIn/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-only"
+		 		 wsdlResource="http://127.0.0.1:18090/axis2/services/TelcoServiceXSLT?wsdl" 
+		 		 soapVersion="1.1" 
+                 soap="true" 
+				 >
+
+	    <http:policies>
+		<soap:ws-security sendAction="Signature" username="serveront">
+		    <soap:crypto>
+			<bean class="org.apache.servicemix.soap.handlers.security.StandaloneCrypto">
+			    <property name="keyStoreUrl" value="classpath:serveront.keystore" />
+			    <property name="keyStorePassword" value="123456" />
+			    <property name="keyPassword" value="123456"/>
+			</bean>
+		    </soap:crypto>
+		</soap:ws-security>
+	    </http:policies>
+  </http:endpoint>
+  -->
+
+  <!-- ### IN-OUT connection ### -->
+  <!--
+  <http:endpoint service="asm1:asm1ClientService"
+                 endpoint="asm1HttpSecProvInOutEnd"
+                 role="provider" 
+                 locationURI="http://127.0.0.1:8292/secConInOut/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+		 		 wsdlResource="http://127.0.0.1:18090/axis2/services/TelcoServiceXSLT?wsdl" 
+                 soap="true" 
+				 soapVersion="1.1"
+				 >
+
+	    <http:policies>
+		<soap:ws-security sendAction="Signature" username="serveront">
+		    <soap:crypto>
+			<bean class="org.apache.servicemix.soap.handlers.security.StandaloneCrypto">
+			    <property name="keyStoreUrl" value="classpath:serveront.keystore" />
+			    <property name="keyStorePassword" value="123456" />
+			    <property name="keyPassword" value="123456"/>
+			</bean>
+		    </soap:crypto>
+		</soap:ws-security>
+	    </http:policies>
+  </http:endpoint>
+  -->
+  <!-- ##### TELCOSERVICE Example END ##### -->
+
+</beans>

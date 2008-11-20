@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- START SNIPPET: camel -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+       http://activemq.apache.org/camel/schema/spring http://activemq.apache.org/camel/schema/spring/camel-spring.xsd
+    ">
+
+  <!--
+     from("seda:a").to("seda:b");
+  -->
+  <camelContext id="camelinout" useJmx="false" xmlns="http://activemq.apache.org/camel/schema/spring">
+  	<package>org.qualipso.interop.semantics.securecomm.asm.inout</package>
+  </camelContext> 
+
+
+  <camelContext id="camelin" useJmx="false" xmlns="http://activemq.apache.org/camel/schema/spring">
+    <package>org.qualipso.interop.semantics.securecomm.asm.in</package>
+  </camelContext>
+
+</beans>
+<!-- END SNIPPET: camel -->

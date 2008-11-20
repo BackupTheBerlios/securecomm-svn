@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>qualipso.wp32.secureCommNode2</groupId>
+  <artifactId>secureCommNode2</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>Secure Comm Node 2</name>
+  <url>http://www.qualipso.eu</url>
+  <modules>
+    <module>securecomm-con-http</module>
+    <module>securecomm-prov-http</module>
+    <module>securecomm-camel</module>
+    <module>securecomm-wssec-bean</module>
+    <module>securecomm-sa</module>
+  </modules>
+</project>

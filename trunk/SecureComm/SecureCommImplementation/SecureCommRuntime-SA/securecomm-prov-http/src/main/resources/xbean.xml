@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:http="http://servicemix.apache.org/http/1.0"
+       xmlns:secCommNode2="urn:qualipso:wp32:secCommNode2">
+
+<classpath>
+	<location>.</location>
+</classpath>
+
+  <!-- ##### TELCOSERVICE Example START ##### -->
+  <!-- ### IN-ONLY connection ### -->
+  <!-- 
+  <http:endpoint service="secCommNode2:secCommNode2ServerServiceProvIn"
+                 endpoint="secCommNode2HttpPlainProvInServerEnd"
+                 role="provider"
+		 locationURI="http://127.0.0.1:18090/axis2/services/TelcoServiceXSLT"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-only"
+		 wsdlResource="http://127.0.0.1:18090/axis2/services/TelcoServiceXSLT?wsdl" 
+                 soap="true" 
+		 soapVersion="1.1" 
+		 />
+
+   -->
+
+  <!-- ### IN-OUT connection ### -->
+  <!-- 
+  <http:endpoint service="secCommNode2:secCommNode2ServerServiceProvInOut"
+                 endpoint="secCommNode2HttpPlainProvInOutServerEnd"
+                 role="provider" 
+                 locationURI="http://127.0.0.1:18090/axis2/services/TelcoServiceXSLT"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+		 wsdlResource="http://127.0.0.1:18090/axis2/services/TelcoServiceXSLT?wsdl"
+                 soap="true" 
+		 soapVersion="1.1"
+		 />
+   -->
+   <!-- ##### TELCOSERVICE Example END ##### -->
+
+</beans>

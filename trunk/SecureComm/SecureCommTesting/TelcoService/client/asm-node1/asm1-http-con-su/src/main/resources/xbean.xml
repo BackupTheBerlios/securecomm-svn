@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:http="http://servicemix.apache.org/http/1.0"
+       xmlns:asm1="urn:qualipso:wp32:asm1">
+
+<classpath>
+	<location>.</location>
+</classpath>
+
+<bean id="propertyPlaceholder" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="classpath:asm1.properties" />
+</bean> 
+
+  <!-- ##### TELCOSERVICE Example START ##### -->
+  <!-- ### IN-ONLY connection ### -->
+  <!--
+  <http:endpoint service="asm1:asm1ClientService"
+                 endpoint="asm1HttpPlainConInEnd"
+                 targetService="asm1:asm1ClientService"
+				 targetEndpoint="asm1HttpSecProvInEnd"
+		 		 role="consumer"
+                 locationURI="http://127.0.0.1:8191/plainConIn/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-only"
+		 		 soapVersion="1.1" 
+                 soap="true" 
+		 		 /> 
+  -->
+
+  <!-- ### IN-OUT connection ### -->
+  <!--
+  <http:endpoint service="asm1:asm1ClientService"
+                 endpoint="asm1HttpPlainConInOutEnd"
+		 		 targetService="asm1:asm1ClientService"
+                 targetEndpoint="asm1HttpSecProvInOutEnd"
+                 role="consumer" 
+                 locationURI="http://127.0.0.1:8192/plainConInOut/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+                 soap="true"
+				 soapVersion="1.1"
+				 />
+  -->
+  <!-- ##### TELCOSERVICE Example END ##### -->
+
+</beans>

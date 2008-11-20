@@ -1,0 +1,1140 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+    xmlns:p1="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#"
+    xmlns:p2="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#"
+    xmlns:protege="http://protege.stanford.edu/plugins/owl/protege#"
+    xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:p3="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/bridgeOntology.owl#"
+  xml:base="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/bridgeOntology.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl"/>
+    <owl:imports rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl"/>
+    <owl:imports rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl"/>
+  </owl:Ontology>
+  <swrl:Variable rdf:ID="ssn"/>
+  <swrl:AtomList/>
+  <swrl:Variable rdf:ID="pass"/>
+  <swrl:Variable rdf:ID="hasSS"/>
+  <swrl:Variable rdf:ID="isa"/>
+  <swrl:Variable rdf:ID="uid"/>
+  <swrl:Variable rdf:ID="phone"/>
+  <swrl:Imp rdf:ID="Rule-1">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1>
+              <swrl:Variable rdf:ID="tu"/>
+            </swrl:argument1>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#action"/>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="oper"/>
+                </swrl:argument2>
+                <swrl:argument1 rdf:resource="#tu"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#tu"/>
+                <swrl:argument2 rdf:resource="#oper"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#operation"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#TelcoServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >transfer the 'operation' attribute</rdfs:comment>
+  </swrl:Imp>
+  <swrl:Variable rdf:ID="tel"/>
+  <swrl:Variable rdf:ID="hasC"/>
+  <rdf:Description rdf:about="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#Weak_Type">
+    <owl:disjointWith>
+      <rdf:Description rdf:about="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#Strong_Type">
+        <owl:disjointWith rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+        <owl:disjointWith rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#Weak_Type"/>
+      </rdf:Description>
+    </owl:disjointWith>
+    <owl:disjointWith rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+  </rdf:Description>
+  <swrl:Imp rdf:ID="Rule-5">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="ep"/>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#entryPoint"/>
+                <swrl:argument1 rdf:resource="#tu"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#entryPoint"/>
+                <swrl:argument2 rdf:resource="#ep"/>
+                <swrl:argument1 rdf:resource="#tu"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#TelcoServiceRequest"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:AtomList/>
+  <swrl:Variable rdf:ID="wa"/>
+  <swrl:Variable rdf:ID="id"/>
+  <swrl:Variable rdf:ID="fn"/>
+  <swrl:Imp rdf:ID="Rule-4">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#TelcoServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#phone"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#phoneNumber"/>
+                <swrl:argument1 rdf:resource="#tu"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#tu"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#telephoneNumber"/>
+                <swrl:argument2 rdf:resource="#phone"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:AtomList/>
+  <swrl:Imp rdf:ID="Rule-6">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#user"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:argument2>
+              <swrl:Variable rdf:ID="user"/>
+            </swrl:argument2>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#user"/>
+                    <swrl:argument2 rdf:resource="#pass"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#password"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#hasCertificate"/>
+                        <swrl:argument2 rdf:resource="#hasC"/>
+                        <swrl:argument1 rdf:resource="#user"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#UserPass"/>
+                            <swrl:argument1>
+                              <swrl:Variable rdf:ID="up"/>
+                            </swrl:argument1>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:BuiltinAtom>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                        <swrl:arguments>
+                                          <rdf:List>
+                                            <rdf:rest>
+                                              <rdf:List>
+                                                <rdf:first>
+                                                  <swrl:Variable rdf:ID="p3un"/>
+                                                </rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:List>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:Variable rdf:ID="name"/>
+                                            </rdf:first>
+                                          </rdf:List>
+                                        </swrl:arguments>
+                                      </swrl:BuiltinAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            <rdf:first>
+                                              <swrl:BuiltinAtom>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                                <swrl:arguments>
+                                                  <rdf:List>
+                                                    <rdf:first rdf:resource="#hasC"/>
+                                                    <rdf:rest>
+                                                      <rdf:List>
+                                                        <rdf:first
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >false</rdf:first>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                      </rdf:List>
+                                                    </rdf:rest>
+                                                  </rdf:List>
+                                                </swrl:arguments>
+                                              </swrl:BuiltinAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:first rdf:resource="#pass"/>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:first>
+                                                      <swrl:Variable rdf:ID="p3p"/>
+                                                    </rdf:first>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:argument1 rdf:resource="#up"/>
+                                    <swrl:argument2 rdf:resource="#p3p"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#password"/>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:DatavaluedPropertyAtom>
+                                <swrl:argument2 rdf:resource="#p3un"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#username"/>
+                                <swrl:argument1 rdf:resource="#up"/>
+                              </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#uname"/>
+                <swrl:argument2 rdf:resource="#name"/>
+                <swrl:argument1 rdf:resource="#user"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >weak</swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#authType"/>
+                <swrl:argument1 rdf:resource="#tu"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:AtomList>
+    <rdf:rest>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:DatavaluedPropertyAtom>
+            <swrl:argument2 rdf:resource="#tel"/>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#telephone"/>
+            <swrl:argument1 rdf:resource="#user"/>
+          </swrl:DatavaluedPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#fullname"/>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="p3fn"/>
+                    </swrl:argument2>
+                    <swrl:argument1>
+                      <swrl:Variable rdf:ID="nt"/>
+                    </swrl:argument1>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:BuiltinAtom>
+                            <swrl:arguments>
+                              <rdf:List>
+                                <rdf:first rdf:resource="#fn"/>
+                                <rdf:rest>
+                                  <rdf:List>
+                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                    <rdf:first rdf:resource="#p3fn"/>
+                                  </rdf:List>
+                                </rdf:rest>
+                              </rdf:List>
+                            </swrl:arguments>
+                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                          </swrl:BuiltinAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:BuiltinAtom>
+                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                <swrl:arguments>
+                                  <rdf:List>
+                                    <rdf:first rdf:resource="#tel"/>
+                                    <rdf:rest>
+                                      <rdf:List>
+                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        <rdf:first>
+                                          <swrl:Variable rdf:ID="p3tn"/>
+                                        </rdf:first>
+                                      </rdf:List>
+                                    </rdf:rest>
+                                  </rdf:List>
+                                </swrl:arguments>
+                              </swrl:BuiltinAtom>
+                            </rdf:first>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#telefoneNumber"/>
+                        <swrl:argument1 rdf:resource="#nt"/>
+                        <swrl:argument2 rdf:resource="#p3tn"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:ClassAtom>
+                <swrl:argument1 rdf:resource="#nt"/>
+                <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#NameTel"/>
+              </swrl:ClassAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </rdf:rest>
+    <rdf:first>
+      <swrl:DatavaluedPropertyAtom>
+        <swrl:argument2 rdf:resource="#fn"/>
+        <swrl:argument1 rdf:resource="#user"/>
+        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#fullname"/>
+      </swrl:DatavaluedPropertyAtom>
+    </rdf:first>
+  </swrl:AtomList>
+  <swrl:Variable rdf:ID="has"/>
+  <swrl:Imp rdf:ID="Rule-9">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:argument2 rdf:resource="#user"/>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#user"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#fn"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#fullname"/>
+                <swrl:argument1 rdf:resource="#user"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#user"/>
+                    <swrl:argument2 rdf:resource="#tel"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#telephone"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#hasId"/>
+                        <swrl:argument2>
+                          <swrl:Variable rdf:ID="hasId"/>
+                        </swrl:argument2>
+                        <swrl:argument1 rdf:resource="#user"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#NameTel"/>
+                                <swrl:argument1 rdf:resource="#nt"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#fullname"/>
+                                    <swrl:argument2 rdf:resource="#p3fn"/>
+                                    <swrl:argument1 rdf:resource="#nt"/>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:first>
+                                              <swrl:BuiltinAtom>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                <swrl:arguments>
+                                                  <rdf:List>
+                                                    <rdf:first rdf:resource="#tel"/>
+                                                    <rdf:rest>
+                                                      <rdf:List>
+                                                        <rdf:first rdf:resource="#p3tn"/>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                      </rdf:List>
+                                                    </rdf:rest>
+                                                  </rdf:List>
+                                                </swrl:arguments>
+                                              </swrl:BuiltinAtom>
+                                            </rdf:first>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:first>
+                                                  <swrl:BuiltinAtom>
+                                                    <swrl:arguments>
+                                                      <rdf:List>
+                                                        <rdf:rest>
+                                                          <rdf:List>
+                                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            <rdf:first
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >true</rdf:first>
+                                                          </rdf:List>
+                                                        </rdf:rest>
+                                                        <rdf:first rdf:resource="#hasId"/>
+                                                      </rdf:List>
+                                                    </swrl:arguments>
+                                                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                  </swrl:BuiltinAtom>
+                                                </rdf:first>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    <rdf:first>
+                                                      <swrl:BuiltinAtom>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                        <swrl:arguments>
+                                                          <rdf:List>
+                                                            <rdf:first rdf:resource="#hasSS"/>
+                                                            <rdf:rest>
+                                                              <rdf:List>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >true</rdf:first>                                         </rdf:List>
+                                                            </rdf:rest>
+                                                          </rdf:List>
+                                                        </swrl:arguments>
+                                                      </swrl:BuiltinAtom>
+                                                    </rdf:first>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    <rdf:first rdf:resource="#p3fn"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                                <rdf:first rdf:resource="#fn"/>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                    <rdf:first>
+                                      <swrl:DatavaluedPropertyAtom>
+                                        <swrl:argument2 rdf:resource="#p3tn"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#telefoneNumber"/>
+                                        <swrl:argument1 rdf:resource="#nt"/>
+                                      </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#hasSocSecNum"/>
+                            <swrl:argument2 rdf:resource="#hasSS"/>
+                            <swrl:argument1 rdf:resource="#user"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >strong</swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#authType"/>
+                <swrl:argument1 rdf:resource="#tu"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Variable rdf:ID="uname"/>
+  <rdf:Description rdf:about="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#TelcoServiceRequest_Example">
+    <p1:hasCertificate rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >true</p1:hasCertificate>
+  </rdf:Description>
+  <swrl:Imp rdf:ID="Rule-8">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#user"/>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#user"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#fn"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#fullname"/>
+                <swrl:argument1 rdf:resource="#user"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#user"/>
+                    <swrl:argument2 rdf:resource="#tel"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#telephone"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:DatavaluedPropertyAtom>
+                                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#telefoneNumber"/>
+                                        <swrl:argument2 rdf:resource="#p3tn"/>
+                                        <swrl:argument1 rdf:resource="#nt"/>
+                                      </swrl:DatavaluedPropertyAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:rest>
+                                              <swrl:AtomList>
+                                                <rdf:rest>
+                                                  <swrl:AtomList>
+                                                    <rdf:first>
+                                                      <swrl:BuiltinAtom>
+                                                        <swrl:arguments>
+                                                          <rdf:List>
+                                                            <rdf:first rdf:resource="#hasSS"/>
+                                                            <rdf:rest>
+                                                              <rdf:List>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >false</rdf:first>                                        </rdf:List>
+                                                            </rdf:rest>
+                                                          </rdf:List>
+                                                        </swrl:arguments>
+                                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                      </swrl:BuiltinAtom>
+                                                    </rdf:first>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                  </swrl:AtomList>
+                                                </rdf:rest>
+                                                <rdf:first>
+                                                  <swrl:BuiltinAtom>
+                                                    <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                    <swrl:arguments>
+                                                      <rdf:List>
+                                                        <rdf:first rdf:resource="#hasId"/>
+                                                        <rdf:rest>
+                                                          <rdf:List>
+                                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                            <rdf:first
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >false</rdf:first>
+                                                          </rdf:List>
+                                                        </rdf:rest>
+                                                      </rdf:List>
+                                                    </swrl:arguments>
+                                                  </swrl:BuiltinAtom>
+                                                </rdf:first>
+                                              </swrl:AtomList>
+                                            </rdf:rest>
+                                            <rdf:first>
+                                              <swrl:BuiltinAtom>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#equal"/>
+                                                <swrl:arguments>
+                                                  <rdf:List>
+                                                    <rdf:rest>
+                                                      <rdf:List>
+                                                        <rdf:first rdf:resource="#p3tn"/>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                      </rdf:List>
+                                                    </rdf:rest>
+                                                    <rdf:first rdf:resource="#tel"/>
+                                                  </rdf:List>
+                                                </swrl:arguments>
+                                              </swrl:BuiltinAtom>
+                                            </rdf:first>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    <rdf:first rdf:resource="#p3fn"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                                <rdf:first rdf:resource="#fn"/>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#fullname"/>
+                                    <swrl:argument2 rdf:resource="#p3fn"/>
+                                    <swrl:argument1 rdf:resource="#nt"/>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                            <rdf:first>
+                              <swrl:ClassAtom>
+                                <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#NameTel"/>
+                                <swrl:argument1 rdf:resource="#nt"/>
+                              </swrl:ClassAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#hasSocSecNum"/>
+                            <swrl:argument1 rdf:resource="#user"/>
+                            <swrl:argument2 rdf:resource="#hasSS"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#hasId"/>
+                        <swrl:argument2 rdf:resource="#hasId"/>
+                        <swrl:argument1 rdf:resource="#user"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >weak</swrl:argument2>
+                <swrl:argument1 rdf:resource="#tu"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#authType"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Variable rdf:ID="un"/>
+  <swrl:Variable rdf:ID="is"/>
+  <swrl:Variable rdf:ID="p3id"/>
+  <swrl:Variable rdf:ID="type"/>
+  <swrl:AtomList/>
+  <swrl:AtomList/>
+  <swrl:Imp rdf:ID="Rule-2">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#user"/>
+            <swrl:argument2 rdf:resource="#user"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="til"/>
+                </swrl:argument2>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#telephone"/>
+                <swrl:argument1 rdf:resource="#user"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#tu"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#telephoneNumber"/>
+                <swrl:argument2 rdf:resource="#til"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Variable rdf:ID="tax"/>
+  <swrl:Variable rdf:ID="isW"/>
+  <swrl:AtomList/>
+  <swrl:Variable rdf:ID="wau"/>
+  <swrl:Variable rdf:ID="p3nt"/>
+  <swrl:Variable rdf:ID="idid"/>
+  <swrl:Imp rdf:ID="Rule-3">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#user"/>
+                <swrl:argument2 rdf:resource="#uname"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#uname"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#user"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#user"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#tu"/>
+                <swrl:argument2 rdf:resource="#uname"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#username"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Imp rdf:ID="Rule-7">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:IndividualPropertyAtom>
+            <swrl:argument2 rdf:resource="#user"/>
+            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#user"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+          </swrl:IndividualPropertyAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#password"/>
+                    <swrl:argument2 rdf:resource="#pass"/>
+                    <swrl:argument1 rdf:resource="#user"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#hasC"/>
+                        <swrl:argument1 rdf:resource="#user"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#hasCertificate"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:ClassAtom>
+                            <swrl:argument1 rdf:resource="#up"/>
+                            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#UserPass"/>
+                          </swrl:ClassAtom>
+                        </rdf:first>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:first>
+                              <swrl:DatavaluedPropertyAtom>
+                                <swrl:argument1 rdf:resource="#up"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#username"/>
+                                <swrl:argument2 rdf:resource="#p3un"/>
+                              </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                            <rdf:rest>
+                              <swrl:AtomList>
+                                <rdf:first>
+                                  <swrl:DatavaluedPropertyAtom>
+                                    <swrl:argument2 rdf:resource="#p3p"/>
+                                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/authTypeOntology.owl#password"/>
+                                    <swrl:argument1 rdf:resource="#up"/>
+                                  </swrl:DatavaluedPropertyAtom>
+                                </rdf:first>
+                                <rdf:rest>
+                                  <swrl:AtomList>
+                                    <rdf:first>
+                                      <swrl:BuiltinAtom>
+                                        <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                        <swrl:arguments>
+                                          <rdf:List>
+                                            <rdf:first rdf:resource="#name"/>
+                                            <rdf:rest>
+                                              <rdf:List>
+                                                <rdf:first rdf:resource="#p3un"/>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                              </rdf:List>
+                                            </rdf:rest>
+                                          </rdf:List>
+                                        </swrl:arguments>
+                                      </swrl:BuiltinAtom>
+                                    </rdf:first>
+                                    <rdf:rest>
+                                      <swrl:AtomList>
+                                        <rdf:first>
+                                          <swrl:BuiltinAtom>
+                                            <swrl:arguments>
+                                              <rdf:List>
+                                                <rdf:first rdf:resource="#pass"/>
+                                                <rdf:rest>
+                                                  <rdf:List>
+                                                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                    <rdf:first rdf:resource="#p3p"/>
+                                                  </rdf:List>
+                                                </rdf:rest>
+                                              </rdf:List>
+                                            </swrl:arguments>
+                                            <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                          </swrl:BuiltinAtom>
+                                        </rdf:first>
+                                        <rdf:rest>
+                                          <swrl:AtomList>
+                                            <rdf:first>
+                                              <swrl:BuiltinAtom>
+                                                <swrl:builtin rdf:resource="http://www.w3.org/2003/11/swrlb#stringEqualIgnoreCase"/>
+                                                <swrl:arguments>
+                                                  <rdf:List>
+                                                    <rdf:first rdf:resource="#hasC"/>
+                                                    <rdf:rest>
+                                                      <rdf:List>
+                                                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                                        <rdf:first
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >true</rdf:first>
+                                                      </rdf:List>
+                                                    </rdf:rest>
+                                                  </rdf:List>
+                                                </swrl:arguments>
+                                              </swrl:BuiltinAtom>
+                                            </rdf:first>
+                                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                          </swrl:AtomList>
+                                        </rdf:rest>
+                                      </swrl:AtomList>
+                                    </rdf:rest>
+                                  </swrl:AtomList>
+                                </rdf:rest>
+                              </swrl:AtomList>
+                            </rdf:rest>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#name"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/sourceOntology.owl#uname"/>
+                <swrl:argument1 rdf:resource="#user"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#tu"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#authType"/>
+                <swrl:argument2 rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >strong</swrl:argument2>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/interop/semant/securecomm/TelephoneService/targetOntology.owl#ServiceRequest"/>
+            <swrl:argument1 rdf:resource="#tu"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:Variable rdf:ID="fN"/>
+</rdf:RDF>
+
+<!-- Created with Protege (with OWL Plugin 3.4, Build 500)  http://protege.stanford.edu -->
