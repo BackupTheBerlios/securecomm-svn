@@ -40,4 +40,19 @@
   -->
   <!-- ##### TELCOSERVICE Example END ##### -->
 
+  <!-- ##### TELCOSERVICE Example START ##### -->
+  <!-- 
+  <http:endpoint service="asm1:DAMLService"
+                 endpoint="asm1DAMLConInOutEnd"
+                                 targetService="asm1:asm1ClientService"
+                 targetEndpoint="asm1HttpSecProvInOutEnd"
+                 role="consumer"
+                 locationURI="http://127.0.0.1:7060/asm1DAML2NRL/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+                 soap="true"
+                 soapVersion="1.1"
+                 />
+  -->
+  <!-- ##### TELCOSERVICE Example END ##### -->
+
 </beans>
