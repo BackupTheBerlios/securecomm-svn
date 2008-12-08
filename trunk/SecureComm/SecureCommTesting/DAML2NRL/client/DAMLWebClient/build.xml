@@ -1,88 +1,74 @@
-<!--
-  ~ Licensed to the Apache Software Foundation (ASF) under one
-  ~ or more contributor license agreements. See the NOTICE file
-  ~ distributed with this work for additional information
-  ~ regarding copyright ownership. The ASF licenses this file
-  ~ to you under the Apache License, Version 2.0 (the
-  ~ "License"); you may not use this file except in compliance
-  ~ with the License. You may obtain a copy of the License at
-  ~
-  ~ http://www.apache.org/licenses/LICENSE-2.0
-  ~
-  ~ Unless required by applicable law or agreed to in writing,
-  ~ software distributed under the License is distributed on an
-  ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-  ~ KIND, either express or implied. See the License for the
-  ~ specific language governing permissions and limitations
-  ~ under the License.
-  -->
+
+	<!--
+		~ Licensed to the Apache Software Foundation (ASF) under one ~ or more contributor license
+		agreements. See the NOTICE file ~ distributed with this work for additional information ~
+		regarding copyright ownership. The ASF licenses this file ~ to you under the Apache License,
+		Version 2.0 (the ~ "License"); you may not use this file except in compliance ~ with the License.
+		You may obtain a copy of the License at ~ ~ http://www.apache.org/licenses/LICENSE-2.0 ~ ~ Unless
+		required by applicable law or agreed to in writing, ~ software distributed under the License is
+		distributed on an ~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY ~ KIND, either express
+		or implied. See the License for the ~ specific language governing permissions and limitations ~
+		under the License.
+	-->
 <project name="DAMLWebClient" basedir="." default="generate.service">
 
-	<property name="TOMCAT_HOME" value="/opt/devel/apache/tomcat"/>
-	<property name="tomcat.deploy.dir" value="${TOMCAT_HOME}/webapps"/>
+	<property name="TOMCAT_HOME" value="/opt/devel/apache/tomcat" />
+	<property name="tomcat.deploy.dir" value="${TOMCAT_HOME}/webapps" />
 	<property name="service.name" value="DAMLWebClient" />
 	<property name="service.ext" value="war" />
-    <property name="build.dir" value="${basedir}/build"/>
-   	<property name="service.root" value="www" />
+	<property name="build.dir" value="${basedir}/build" />
+	<property name="service.root" value="www" />
 	<property name="webinf.dir" value="${service.root}/WEB-INF" />
 	<property name="classes.dir" value="${service.root}/WEB-INF/classes" />
 	<property name="lib.dir" value="${service.root}/WEB-INF/lib" />
 
-    <path id="service.libs">
-    	<fileset dir="${TOMCAT_HOME}/lib">
-    		<include name="*.jar" />
-    	</fileset>
-        <fileset dir="${basedir}/${lib.dir}">
-            <include name="*.jar"/>
-        </fileset>
-    </path>
+	<path id="service.libs">
+		<fileset dir="${TOMCAT_HOME}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${basedir}/${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+	</path>
 
-    <target name="compile.service">
-        <mkdir dir="${build.dir}"/>
-        <mkdir dir="${build.dir}/${service.root}"/>
-        <mkdir dir="${build.dir}/${webinf.dir}"/>
-        <mkdir dir="${build.dir}/${classes.dir}"/>
+	<target name="compile.service">
+		<mkdir dir="${build.dir}" />
+		<mkdir dir="${build.dir}/${service.root}" />
+		<mkdir dir="${build.dir}/${webinf.dir}" />
+		<mkdir dir="${build.dir}/${classes.dir}" />
 
-        <!--First let's compile the classes-->
-        <javac debug="on" 
-               fork="true"
-               destdir="${build.dir}/${classes.dir}" 
-               srcdir="${basedir}/src"
-               classpathref="service.libs">
-        </javac>
-    </target>
+		<!--First let's compile the classes-->
+		<javac debug="on" fork="true" destdir="${build.dir}/${classes.dir}" srcdir="${basedir}/src"
+			classpathref="service.libs">
+		</javac>
+	</target>
 
-    <target name="generate.service" depends="compile.service">
-        <!--war them up -->
-        <copy toDir="${build.dir}/${service.root}/" failonerror="true" >
-            <fileset dir="${basedir}/${service.root}/">
-                <include name="**/*"/>
-            </fileset>
-        </copy>
-    	<!-- 
-    	<copy toDir="${build.dir}/${lib.dir}" failonerror="true">
-    		<fileset dir="${basedir}/${lib.dir}">
-    			<include name="*.jar" />
-    		</fileset>
-    	</copy> -->
-        <jar destfile="${build.dir}/${service.name}.${service.ext}">
-            <fileset dir="${build.dir}/${service.root}"/>
-        </jar>
-    </target>
+	<target name="generate.service" depends="compile.service">
+		<!--war them up -->
+		<copy toDir="${build.dir}/${service.root}/" failonerror="true">
+			<fileset dir="${basedir}/${service.root}/">
+				<include name="**/*" />
+			</fileset>
+		</copy>
+		<jar destfile="${build.dir}/${service.name}.${service.ext}">
+			<fileset dir="${build.dir}/${service.root}" />
+		</jar>
+	</target>
 
 	<target name="tomcat.deploy" depends="generate.service">
-		<copy file="${build.dir}/${service.name}.${service.ext}" toDir="${tomcat.deploy.dir}/" overwrite="true"/>
+		<copy file="${build.dir}/${service.name}.${service.ext}" toDir="${tomcat.deploy.dir}/"
+			overwrite="true" />
 	</target>
-	
+
 	<target name="tomcat.clean" depends="clean">
-	        <delete file="${tomcat.deploy.dir}/${service.name}.${service.ext}"/>
-    </target>
-	
-	
-    <target name="clean">
-        <delete dir="${build.dir}"/>
-    </target>
-	
+		<delete file="${tomcat.deploy.dir}/${service.name}.${service.ext}" />
+	</target>
+
+
+	<target name="clean">
+		<delete dir="${build.dir}" />
+	</target>
+
 	<target name="clean.all" depends="tomcat.clean,clean" />
-	
+
 </project>
