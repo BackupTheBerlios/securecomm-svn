@@ -63,4 +63,32 @@
    -->
    <!-- ##### TELCOSERVICE Example END ##### -->
 
+  <!-- ##### DAML2NRL Example START ##### -->
+  <!--
+  <http:endpoint
+        service="secCommNode2:DAMLServiceConInOut"
+    endpoint="secCommNode2DAML"
+    targetService="secCommNode2:camelinout"
+    role="consumer"
+    locationURI="http://127.0.0.1:7070/DAML2NRLInOut/"
+    defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+    soap="true"
+    soapVersion="1.1"
+    >
+	<http:policies>
+	    <soap:ws-security receiveAction="Signature"  username="serveront" >
+
+		<soap:crypto>
+		    <bean class="org.apache.servicemix.soap.handlers.security.StandaloneCrypto">
+	              <property name="keyStoreUrl" value="classpath:serveront.keystore" />
+	              <property name="keyStorePassword" value="123456" />
+	              <property name="keyPassword" value="123456"/>
+	            </bean>
+	          </soap:crypto>
+		</soap:ws-security>
+	  </http:policies>
+   </http:endpoint>
+   -->
+  <!-- ##### DAML2NRL Example END ##### -->
+  
 </beans>
