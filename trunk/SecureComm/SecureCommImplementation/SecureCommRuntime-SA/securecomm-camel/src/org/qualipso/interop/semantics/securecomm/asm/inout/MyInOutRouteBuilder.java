@@ -58,6 +58,7 @@ public class MyInOutRouteBuilder extends RouteBuilder {
 
 	private static final String propertyFileName = "Files/Common/Properties/service_endpoints.properties"; 
 	private static final String WS_NAME_ATTRIBUTE = "service";
+	private static final String WS_NAME_ATTRIBUTE2 = "ID";
 	private Properties availableServicesAsProperties = null;
 	
 	
@@ -81,14 +82,14 @@ public class MyInOutRouteBuilder extends RouteBuilder {
     						
     						org.w3c.dom.Document doc = (org.w3c.dom.Document) msg.getBody(org.w3c.dom.Document.class);
     						Element root = doc.getDocumentElement();
-    						//System.out.println("MyInOutRouteBuilder elemNAME=["+root.getLocalName()+"]\n");
+    						System.out.println("MyInOutRouteBuilder elemNAME=["+root.getLocalName()+"]");
     						
     						NamedNodeMap attrs = root.getAttributes();
     						for (int i=0; i<attrs.getLength(); i++) {
     							Node temp = attrs.item(i);
     							
-    							if (temp.getNodeName().equalsIgnoreCase(WS_NAME_ATTRIBUTE)) {
-    								//System.out.println("MyInOutRouteBuilder ROUTING =>["+temp.getNodeValue()+"]\n");
+    							if (temp.getNodeName().equalsIgnoreCase(WS_NAME_ATTRIBUTE) || temp.getNodeName().equalsIgnoreCase(WS_NAME_ATTRIBUTE2)) {
+    								System.out.println("MyInOutRouteBuilder ROUTING =>["+temp.getNodeValue()+"]");
     								return availableServicesAsProperties.get(temp.getNodeValue().trim());
     							}
     						}
