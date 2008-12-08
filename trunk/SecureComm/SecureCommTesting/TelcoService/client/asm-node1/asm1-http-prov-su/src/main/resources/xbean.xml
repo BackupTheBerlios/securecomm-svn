@@ -65,4 +65,30 @@
   -->
   <!-- ##### TELCOSERVICE Example END ##### -->
 
+  <!-- ##### TELCOSERVICE Example START ##### -->
+  <!--
+  <http:endpoint service="asm1:secDAMLService"
+                 endpoint="asm1DAMLProvInOutEnd"
+                 role="provider"
+                 locationURI="http://127.0.0.1:7070/DAML2NRLInOut/"
+                 defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+                 soap="true"
+                 soapVersion="1.1"
+                 >
+
+            <http:policies>
+                <soap:ws-security sendAction="Signature" username="serveront">
+                    <soap:crypto>
+                        <bean class="org.apache.servicemix.soap.handlers.security.StandaloneCrypto">
+                            <property name="keyStoreUrl" value="classpath:serveront.keystore" />
+                            <property name="keyStorePassword" value="123456" />
+                            <property name="keyPassword" value="123456"/>
+                        </bean>
+                    </soap:crypto>
+                </soap:ws-security>
+            </http:policies>
+  </http:endpoint>
+  -->
+  <!-- ##### TELCOSERVICE Example END ##### -->
+
 </beans>
