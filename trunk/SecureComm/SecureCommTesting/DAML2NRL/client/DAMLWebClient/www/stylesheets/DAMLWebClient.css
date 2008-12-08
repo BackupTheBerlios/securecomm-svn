@@ -1,0 +1,238 @@
+@CHARSET "UTF-8";
+
+/* Common */
+body {
+	margin: 20px;
+	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+	color: #000000;
+	margin: 0;
+	padding: 0;
+	line-height: 50px;
+}
+
+h2 {
+	margin: 15px;
+	width: 97%;
+	border-bottom: 1px solid #036;
+	color: #036;
+	font-size: 23px;
+	font-weight: bold;
+	text-align: left;
+}
+
+h3 {
+	padding: 15px;
+	width: 97%;
+	color: #036;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: left;
+}
+
+table.confirmationdata {
+	border: 1px solid #036;
+	margin: 5px;
+	padding: 5px;
+	float: left;
+	width: 260px;
+}
+
+table.logindata {
+	border: 1px solid #036;
+	margin: 5px;
+	padding: 5px;
+	float: left;
+	width: 260px;
+}
+
+input.userdatainput {
+	width: 100px;
+}
+
+#top {
+	padding: 10px;
+	margin: 0 0 20px 0;
+	border: 5px solid #ccc;
+	background: #DDDDDD;
+	width: 98%;
+	height: 50px;
+}
+
+#box {
+	margin: 5px;
+	width: 100%;
+}
+
+#left {
+	display: block;
+	float: left;
+	width: 15%;
+	background: #DDDDDD;
+	min-height: 100px;
+}
+
+#main {
+	float: right;
+	background: #eee;
+	width: 83%;
+	background: #eee;
+	min-height: 100px;
+	margin-right: 5px;
+}
+
+#footer {
+	margin-top: 10px;
+	margin-right: 25px;
+	float: right;
+	width: 81%;
+}
+
+#list {
+	margin: 5px 0 20px 13px;
+	padding: 5px 0 0 10px;
+	color: #036;
+}
+
+#damlwebform {
+	width: 100%;
+}
+
+#subject {
+	margin: 30px 15px 0px;
+	width: 96%;
+}
+
+#btn {
+	width: 120px;
+	margin: 10px;
+	float: left;
+	clear: both;
+}
+
+/* Success page */
+#successmsg {
+	color: green;
+	margin: 15px;
+	font-size: 23px;
+	font-weight: bold;
+	text-align: left;
+	width: 97%;
+	border-bottom: 1px solid green;
+}
+
+/* Error page */
+#errormsg {
+	color: red;
+	margin: 15px;
+	font-size: 23px;
+	font-weight: bold;
+	text-align: left;
+	width: 97%;
+	border-bottom: 1px solid red;
+}
+
+#results {
+	margin: 15px;
+	color: blue;
+	width: 97%;
+}
+
+/* Credentials */
+#IDCard {
+	padding: 5px;
+	float: left;
+	width: 96%;
+	margin: 10px;
+}
+
+#Biometric {
+	padding: 5px;
+	float: left;
+	width: 96%;
+	margin: 10px;
+}
+
+#Certificate {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 260px;
+}
+
+#Cookie {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 260px;
+}
+
+#Login {
+	padding: 5px;
+	float: left;
+	width: 96%;
+	margin: 10px;
+}
+
+#Smartcard {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 260px;
+}
+
+/* Security Mechanism */
+#Encryption {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 270px;
+}
+
+#Datatransferprotocol {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 270px;
+}
+
+#Keyinformationprot {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 270px;
+}
+
+#Keyregistrationprot {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 270px;
+}
+
+#Signature {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 270px;
+}
+
+/* Security Notation */
+#Securitynotation {
+	padding: 5px;
+	float: left;
+	width: 280px;
+	margin: 10px;
+	height: 330px;
+}

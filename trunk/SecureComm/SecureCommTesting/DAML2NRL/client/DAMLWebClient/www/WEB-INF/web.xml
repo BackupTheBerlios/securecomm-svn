@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>DAMLWebClient</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description>Simple DAML Web Client implementation</description>
+		<display-name>DAMLRequestManager</display-name>
+		<servlet-name>DAMLRequestManager</servlet-name>
+		<servlet-class>org.qualipso.damlservice.web.DAMLWebClient</servlet-class>
+		<init-param>
+			<description>SOAP server address</description>
+			<param-name>soapserveraddress</param-name>
+			<param-value>http://localhost:7060</param-value>
+		</init-param>
+		<init-param>
+			<description>SOAP service URI location</description>
+			<param-name>soapserviceuri</param-name>
+			<param-value>/asm1DAML2NRL/</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DAMLRequestManager</servlet-name>
+		<url-pattern>/DAMLReqMan</url-pattern>
+	</servlet-mapping>
+</web-app>
