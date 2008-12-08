@@ -169,8 +169,8 @@ public class CredentialsTranslator implements MessageExchangeListener, Constants
 	                            NamedNodeMap attrs = elem.getAttributes();
 	    						for (int i=0; i<attrs.getLength(); i++) {
 	    							Node temp = attrs.item(i);
-	    							//System.out.println("atr_name=[" + temp.getLocalName() +"] val=[" + temp.getNodeValue() +"]\n");
-	    							if (temp.getLocalName().equalsIgnoreCase(Constants.WS_NAME)) {
+	    							System.out.println("atr_name=[" + temp.getLocalName() +"] val=[" + temp.getNodeValue() +"]\n");
+	    							if (temp.getLocalName().equalsIgnoreCase(Constants.WS_NAME) || temp.getLocalName().equalsIgnoreCase(Constants.WS_NAME2)) {
 	    								operationName = temp.getNodeValue().trim();
 	    								break;
 	    							}
