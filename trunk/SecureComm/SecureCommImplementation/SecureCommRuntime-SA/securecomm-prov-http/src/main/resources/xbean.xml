@@ -35,4 +35,19 @@
    -->
    <!-- ##### TELCOSERVICE Example END ##### -->
 
+  <!-- ##### DAML2NRL Example START ##### -->
+  <!-- 
+  <http:endpoint
+        service="secCommNode2:NRLServiceProvInOut"
+    endpoint="secCommNode2NRL"
+    role="provider"
+    locationURI="http://127.0.0.1:18090/axis2/services/NRLService"
+    defaultMep="http://www.w3.org/2004/08/wsdl/in-out"
+    wsdlResource="http://127.0.0.1:18090/axis2/services/NRLService?wsdl"
+    soap="true"
+    soapVersion="1.1"
+    />
+  -->
+  <!-- ##### DAML2NRL Example END ##### -->
+
 </beans>
