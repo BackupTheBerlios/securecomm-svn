@@ -34,5 +34,6 @@ public interface Constants {
 
 	/** the message must contain the name of the WS we are connectiong to */
 	public static final String WS_NAME = "service";
+	public static final String WS_NAME2 = "ID";
 	
 }
