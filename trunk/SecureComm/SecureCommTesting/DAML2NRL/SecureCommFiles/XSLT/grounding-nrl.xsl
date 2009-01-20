@@ -185,34 +185,43 @@
 		</Passport>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='XMLSignatureX509v3Certificate'] ">
+	<xsl:template priority="10"
+		match="*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate'] ">
 		<X.509Certificate>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='serialNumber']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='serialNumber']">
 				<xsl:element name="serialNumber">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='serialNumber']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='serialNumber']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='version']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='version']">
 				<xsl:element name="version">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='version']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='version']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notBefore']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notBefore']">
 				<xsl:element name="notBefore">
-					<xsl:value-of select="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notBefore']" />
+					<xsl:value-of
+						select="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notBefore']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notAfter']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notAfter']">
 				<xsl:element name="notAfter">
-					<xsl:value-of select="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notAfter']" />
+					<xsl:value-of
+						select="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='notAfter']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='issuer']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='issuer']">
 				<xsl:element name="issuer">
-					<xsl:value-of select="document($BRIDGE_RESULT)//*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='issuer']" />
+					<xsl:value-of
+						select="document($BRIDGE_RESULT)//*[local-name()='X.509Certificate' or local-name()='XMLSignatureX509v3Certificate']/*[local-name()='issuer']" />
 				</xsl:element>
 			</xsl:if>
 		</X.509Certificate>
@@ -241,19 +250,18 @@
 		</SmartCard>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='ComposedCredential'] ">
+	<xsl:template priority="10" match="*[local-name()='Password'] ">
 		<Password>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='ComposedCredential']/*[local-name()='userName']">
+			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='Password']/*[local-name()='userName']">
 				<xsl:element name="userName">
-					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='ComposedCredential']/*[local-name()='userName']" />
+					<xsl:value-of select="document($BRIDGE_RESULT)//*[local-name()='Password']/*[local-name()='userName']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='ComposedCredential']/*[local-name()='passValue']">
+			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='Password']/*[local-name()='passValue']">
 				<xsl:element name="passValue">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='ComposedCredential']/*[local-name()='passValue']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Password']/*[local-name()='passValue']" />
 				</xsl:element>
 			</xsl:if>
 		</Password>
@@ -268,10 +276,10 @@
 						select="document($BRIDGE_RESULT)//*[local-name()='OneTimePassword']/*[local-name()='userName']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='OneTimePassword']/*[local-name()='paswSeed']">
-				<xsl:element name="paswSeed">
+			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='OneTimePassword']/*[local-name()='paswdSeed']">
+				<xsl:element name="paswdSeed">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='OneTimePassword']/*[local-name()='paswSeed']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='OneTimePassword']/*[local-name()='paswdSeed']" />
 				</xsl:element>
 			</xsl:if>
 		</OneTimePassword>
@@ -280,7 +288,8 @@
 	<xsl:template priority="10" match="*[local-name()='Fingerprint'] ">
 		<Fingerprint>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='Fingerprint']/*[local-name()='bioTokenSerial']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Fingerprint']/*[local-name()='bioTokenSerial']">
 				<xsl:element name="bioTokenSerial">
 					<xsl:value-of
 						select="document($BRIDGE_RESULT)//*[local-name()='Fingerprint']/*[local-name()='bioTokenSerial']" />
@@ -313,151 +322,172 @@
 		</Voice>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='EncryptionProtocol'] ">
+	<xsl:template priority="10" match="*[local-name()='Encryption'] ">
 		<EncryptionProtocol>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='hasAlgorithm']">
+			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='hasAlgorithm']">
 				<xsl:element name="hasAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='hasAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='hasAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='supportsSecurityObjective']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='supportsSecurityObjective']">
 				<xsl:element name="supportsSecurityObjective">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='supportsSecurityObjective']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='supportsSecurityObjective']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='hasEncryptionAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='hasEncryptionAlgorithm']">
 				<xsl:element name="hasEncryptionAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='hasEncryptionAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='reqCredential']">
+			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='reqCredential']">
 				<xsl:element name="reqCredential">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='EncryptionProtocol']/*[local-name()='reqCredential']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Encryption']/*[local-name()='reqCredential']" />
 				</xsl:element>
 			</xsl:if>
 		</EncryptionProtocol>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='KeyManagementProtocol'] ">
+	<xsl:template priority="10"
+		match="*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol'] ">
 		<KeyManagementProtocol>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']">
 				<xsl:element name="hasAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']">
 				<xsl:element name="supportsSecurityObjective">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']">
 				<xsl:element name="hasEncryptionAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']">
 				<xsl:element name="reqCredential">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyInformationProt' or local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']" />
 				</xsl:element>
 			</xsl:if>
 		</KeyManagementProtocol>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='KeyManagementProtocol'] ">
+	<xsl:template priority="10"
+		match="*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol'] ">
 		<KeyManagementProtocol>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']">
 				<xsl:element name="hasAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']">
 				<xsl:element name="supportsSecurityObjective">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='supportsSecurityObjective']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']">
 				<xsl:element name="hasEncryptionAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']">
 				<xsl:element name="reqCredential">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='KeyRegistrationProt' or local-name()='KeyManagementProtocol']/*[local-name()='reqCredential']" />
 				</xsl:element>
 			</xsl:if>
 		</KeyManagementProtocol>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='SignatureProtocol'] ">
-		<SignatureProtocol>
+	<xsl:template priority="10" match="*[local-name()='DataTransferProtocol'] ">
+		<NetworkSecurityProtocol>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='hasAlgorithm']">
 				<xsl:element name="hasAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='hasAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='supportsSecurityObjective']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='supportsSecurityObjective']">
 				<xsl:element name="supportsSecurityObjective">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='supportsSecurityObjective']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='supportsSecurityObjective']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasEncryptionAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='hasEncryptionAlgorithm']">
 				<xsl:element name="hasEncryptionAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='reqCredential']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='reqCredential']">
 				<xsl:element name="reqCredential">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='reqCredential']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='DataTransferProtocol']/*[local-name()='reqCredential']" />
 				</xsl:element>
 			</xsl:if>
-		</SignatureProtocol>
+		</NetworkSecurityProtocol>
 	</xsl:template>
 
-	<xsl:template priority="10" match="*[local-name()='SignatureProtocol'] ">
+	<xsl:template priority="10"
+		match="*[local-name()='Signature' or local-name()='SignatureProtocol'] ">
 		<SignatureProtocol>
 			<xsl:apply-templates select="*" />
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='hasAlgorithm']">
 				<xsl:element name="hasAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='hasAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='supportsSecurityObjective']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='supportsSecurityObjective']">
 				<xsl:element name="supportsSecurityObjective">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='supportsSecurityObjective']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='supportsSecurityObjective']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasEncryptionAlgorithm']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='hasEncryptionAlgorithm']">
 				<xsl:element name="hasEncryptionAlgorithm">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='hasEncryptionAlgorithm']" />
 				</xsl:element>
 			</xsl:if>
-			<xsl:if test="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='reqCredential']">
+			<xsl:if
+				test="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='reqCredential']">
 				<xsl:element name="reqCredential">
 					<xsl:value-of
-						select="document($BRIDGE_RESULT)//*[local-name()='SignatureProtocol']/*[local-name()='reqCredential']" />
+						select="document($BRIDGE_RESULT)//*[local-name()='Signature' or local-name()='SignatureProtocol']/*[local-name()='reqCredential']" />
 				</xsl:element>
 			</xsl:if>
 		</SignatureProtocol>
