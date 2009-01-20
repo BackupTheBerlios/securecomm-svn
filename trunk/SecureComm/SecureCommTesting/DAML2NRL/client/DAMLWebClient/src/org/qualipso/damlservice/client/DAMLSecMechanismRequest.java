@@ -99,7 +99,7 @@ public class DAMLSecMechanismRequest extends SAMLSOAPClient {
 			infoRequest.addChild(parentElement);
 		}
 		if (hasDataTransferProtocol) {
-			parentElement=sFactory.createOMElement("Encryption", sNameSpace);
+			parentElement=sFactory.createOMElement("DataTransferProtocol", sNameSpace);
 			childElement=sFactory.createOMElement("syntax",sNameSpace);
 			childElement.setText(dataSyntax);
 			parentElement.addChild(childElement);
@@ -121,7 +121,7 @@ public class DAMLSecMechanismRequest extends SAMLSOAPClient {
 			infoRequest.addChild(parentElement);
 		}
 		if (hasKeyInformationProt) {
-			parentElement=sFactory.createOMElement("Encryption", sNameSpace);
+			parentElement=sFactory.createOMElement("KeyInformationProt", sNameSpace);
 			childElement=sFactory.createOMElement("syntax",sNameSpace);
 			childElement.setText(keyinfoSyntax);
 			parentElement.addChild(childElement);
@@ -143,7 +143,7 @@ public class DAMLSecMechanismRequest extends SAMLSOAPClient {
 			infoRequest.addChild(parentElement);
 		}
 		if (hasKeyRegistrationProt) {
-			parentElement=sFactory.createOMElement("Encryption", sNameSpace);
+			parentElement=sFactory.createOMElement("KeyRegistrationProt", sNameSpace);
 			childElement=sFactory.createOMElement("syntax",sNameSpace);
 			childElement.setText(keyregSyntax);
 			parentElement.addChild(childElement);
@@ -165,7 +165,7 @@ public class DAMLSecMechanismRequest extends SAMLSOAPClient {
 			infoRequest.addChild(parentElement);
 		}
 		if (hasSignature) {
-			parentElement=sFactory.createOMElement("Encryption", sNameSpace);
+			parentElement=sFactory.createOMElement("Signature", sNameSpace);
 			childElement=sFactory.createOMElement("syntax",sNameSpace);
 			childElement.setText(signatureSyntax);
 			parentElement.addChild(childElement);
