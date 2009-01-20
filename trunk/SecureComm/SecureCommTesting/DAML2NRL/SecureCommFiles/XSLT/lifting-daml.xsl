@@ -188,7 +188,8 @@
 				</Passport>
 			</xsl:if>
 
-			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='XMLSignatureX509v3Certificate']">
+			<xsl:if
+				test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='XMLSignatureX509v3Certificate']">
 				<XMLSignatureX509v3Certificate rdf:ID="someXMLSignatureX509v3Certificate">
 					<xsl:if
 						test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='XMLSignatureX509v3Certificate']/*[local-name()='certSerial']">
@@ -587,40 +588,40 @@
 			</xsl:if>
 
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Authentication']">
-				<Authentication rdf:ID="someAuthentication" />
+				<SecurityNotation rdf:ID="someAuthentication" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Authorization']">
-				<Authorization rdf:ID="someAuthorization" />
+				<SecurityNotation rdf:ID="someAuthorization" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='AccessControl']">
-				<AccessControl rdf:ID="someAccessControl" />
+				<SecurityNotation rdf:ID="someAccessControl" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='DataIntegrity']">
-				<DataIntegrity rdf:ID="someDataIntegrity" />
+				<SecurityNotation rdf:ID="someDataIntegrity" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Confidentiality']">
-				<Confidentiality rdf:ID="someConfidentiality" />
+				<SecurityNotation rdf:ID="someConfidentiality" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Privacy']">
-				<Privacy rdf:ID="somePrivacy" />
+				<SecurityNotation rdf:ID="somePrivacy" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='ExposureControl']">
-				<ExposureControl rdf:ID="someExposureControl" />
+				<SecurityNotation rdf:ID="someExposureControl" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Anonymity']">
-				<Anonymity rdf:ID="someAnonymity" />
+				<SecurityNotation rdf:ID="someAnonymity" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Negotiation']">
-				<Negotiation rdf:ID="someNegotiation" />
+				<SecurityNotation rdf:ID="someNegotiation" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='Policy']">
-				<Policy rdf:ID="somePolicy" />
+				<SecurityNotation rdf:ID="somePolicy" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='PolicyLanguage']">
-				<PolicyLanguage rdf:ID="somePolicyLanguage" />
+				<SecurityNotation rdf:ID="somePolicyLanguage" />
 			</xsl:if>
 			<xsl:if test="//*[name()='saml:SubjectConfirmationData']/*[local-name()='KeyDistribution']">
-				<KeyDistribution rdf:ID="someKeyDistribution" />
+				<SecurityNotation rdf:ID="someKeyDistribution" />
 			</xsl:if>
 
 		</xsl:for-each>
