@@ -19,6 +19,6 @@ public interface BridgerConstants {
 	
 	/** uri of the bridging result ontology */
 	public static final String RESULT_ONTOLOGY_URI = 
-		"http://www.qualipso.org/interop/semant/securecomm/TelephoneService/resultOntology.owl";
+		"http://www.qualipso.org/interop/semant/securecomm/TelephoneService/resultOntology.owl#";
 	
 }
