@@ -33,15 +33,17 @@
   <swrl:Imp rdf:ID="MapSecNotDataIntegrity">
     <swrl:head>
       <swrl:AtomList>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageIntegrity"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
           </swrl:ClassAtom>
         </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:body>
       <swrl:AtomList>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -67,58 +69,66 @@
         </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+                <swrl:argument2>
+                  <swrl:Variable rdf:ID="y"/>
+                </swrl:argument2>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument2>
-                      <swrl:Variable rdf:ID="z"/>
-                    </swrl:argument2>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
                 <rdf:rest>
                   <swrl:AtomList>
                     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     <rdf:first>
                       <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
                         <swrl:argument2>
                           <swrl:Variable rdf:ID="a"/>
                         </swrl:argument2>
                         <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2>
+                      <swrl:Variable rdf:ID="z"/>
+                    </swrl:argument2>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
                         <swrl:argument1 rdf:resource="#x"/>
                       </swrl:DatavaluedPropertyAtom>
                     </rdf:first>
                   </swrl:AtomList>
                 </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:argument2>
-                  <swrl:Variable rdf:ID="y"/>
-                </swrl:argument2>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:body>
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DebitCard"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
                     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
@@ -126,18 +136,6 @@
                     <swrl:argument2 rdf:resource="#z"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
               </swrl:AtomList>
             </rdf:rest>
             <rdf:first>
@@ -149,19 +147,25 @@
             </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DebitCard"/>
+          </swrl:ClassAtom>
+        </rdf:first>
       </swrl:AtomList>
     </swrl:head>
   </swrl:Imp>
   <swrl:Imp rdf:ID="MapSecNotPrivacy">
     <swrl:head>
       <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#TrafficHiding"/>
           </swrl:ClassAtom>
         </rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:head>
     <swrl:body>
@@ -169,45 +173,46 @@
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Privacy"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
           </swrl:ClassAtom>
         </rdf:first>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+  <swrl:IndividualPropertyAtom>
     <swrl:argument2 rdf:resource="#a"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
     <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
+  </swrl:IndividualPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Authorization"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
+  <swrl:IndividualPropertyAtom>
     <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-  </swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2>
+      <swrl:Variable rdf:ID="b"/>
+    </swrl:argument2>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+  </swrl:IndividualPropertyAtom>
   <swrl:Imp rdf:ID="MapSecNotConfidentiality">
     <swrl:body>
       <swrl:AtomList>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Confidentiality"/>
           </swrl:ClassAtom>
         </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:body>
     <swrl:head>
@@ -221,118 +226,94 @@
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authentication"/>
+  </swrl:ClassAtom>
   <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:argument2 rdf:resource="#z"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
   </swrl:IndividualPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
     <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-    <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
+  <swrl:IndividualPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#z"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-  </swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#b"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
     <swrl:argument2 rdf:resource="#y"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
     <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#KeyManagementProtocol"/>
   </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
   <swrl:Imp rdf:ID="MapSecNotKeyDistribution">
     <swrl:body>
       <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#KeyDistribution"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
           </swrl:ClassAtom>
         </rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:head>
       <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#KeyManagement"/>
           </swrl:ClassAtom>
         </rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:head>
   </swrl:Imp>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Privacy"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-  </swrl:DatavaluedPropertyAtom>
   <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-    <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#z"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
     <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
   </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
-    <swrl:argument2 rdf:resource="#z"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
     <swrl:argument2 rdf:resource="#y"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Authorization"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+  </swrl:ClassAtom>
   <swrl:Imp rdf:ID="MapSecNotAnonymity">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:head>
       <swrl:AtomList>
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -349,54 +330,54 @@
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Anonymity"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
           </swrl:ClassAtom>
         </rdf:first>
       </swrl:AtomList>
     </swrl:body>
   </swrl:Imp>
   <swrl:IndividualPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-    <swrl:argument2>
-      <swrl:Variable rdf:ID="b"/>
-    </swrl:argument2>
     <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+    <swrl:argument2 rdf:resource="#y"/>
   </swrl:IndividualPropertyAtom>
   <swrl:Imp rdf:ID="MapOneTimePassword">
     <swrl:body>
       <swrl:AtomList>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#OneTimePassword"/>
             <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#OneTimePassword"/>
           </swrl:ClassAtom>
         </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#seed"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#passphrase"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#y"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#seed"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+              </swrl:AtomList>
+            </rdf:rest>
           </swrl:AtomList>
         </rdf:rest>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:head>
       <swrl:AtomList>
         <rdf:first>
@@ -409,18 +390,18 @@
           <swrl:AtomList>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#userName"/>
                 <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#userName"/>
+                <swrl:argument1 rdf:resource="#x"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#paswdSeed"/>
-                    <swrl:argument1 rdf:resource="#x"/>
                     <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#paswdSeed"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -432,26 +413,16 @@
     </swrl:head>
   </swrl:Imp>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Anonymity"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authorization"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
   </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#imageData"/>
-  </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#TrafficHiding"/>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#UserAuthentication"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
   </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument2 rdf:resource="#a"/>
@@ -459,124 +430,176 @@
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
   </swrl:DatavaluedPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#biometricSerial"/>
     <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+    <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-  </swrl:IndividualPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Anonymity"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
+    <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
   <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#AccessControl"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:IndividualPropertyAtom>
   <swrl:Imp rdf:ID="MapKeyRegProtocol">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:head>
       <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#b"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
         <rdf:first>
           <swrl:ClassAtom>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#KeyManagementProtocol"/>
             <swrl:argument1 rdf:resource="#x"/>
           </swrl:ClassAtom>
         </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:argument2 rdf:resource="#y"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-                        <swrl:argument2 rdf:resource="#b"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
       </swrl:AtomList>
     </swrl:head>
     <swrl:body>
       <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#KeyRegistrationProt"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#b"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Privacy"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DriversLicense"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+    <swrl:argument2 rdf:resource="#b"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:Imp rdf:ID="MapBadge">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
             <rdf:rest>
               <swrl:AtomList>
                 <rdf:first>
-                  <swrl:IndividualPropertyAtom>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
                     <swrl:argument2 rdf:resource="#z"/>
                     <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-                  </swrl:IndividualPropertyAtom>
+                  </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
                 <rdf:rest>
                   <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument2 rdf:resource="#b"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
                     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
                   </swrl:AtomList>
                 </rdf:rest>
               </swrl:AtomList>
             </rdf:rest>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#KeyRegistrationProt"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-      </swrl:AtomList>
-    </swrl:body>
-  </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:Imp rdf:ID="MapBadge">
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:rest>
-          <swrl:AtomList>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
                 <swrl:argument1 rdf:resource="#x"/>
@@ -584,214 +607,209 @@
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument2 rdf:resource="#a"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
           </swrl:AtomList>
         </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
       </swrl:AtomList>
     </swrl:body>
     <swrl:head>
       <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
+          </swrl:ClassAtom>
+        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
                     <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
                     <swrl:argument1 rdf:resource="#x"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
               </swrl:AtomList>
             </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-    <swrl:argument2 rdf:resource="#y"/>
-  </swrl:IndividualPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageIntegrity"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
-    <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasEncryptionAlgorithm"/>
-  </swrl:IndividualPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#AccessControl"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageIntegrity"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Fingerprint"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-  </swrl:IndividualPropertyAtom>
+  </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#a"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:argument2 rdf:resource="#z"/>
   </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Encryption"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#biometricSerial"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#EncryptionProtocol"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Fingerprint"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#z"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#NetworkSecurityProtocol"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-  </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataIntegrity"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#KeyManagementProtocol"/>
-    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authorization"/>
   </swrl:ClassAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authentication"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
   </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#imageData"/>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-  </swrl:IndividualPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageAuthentication"/>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageAuthentication"/>
   </swrl:ClassAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasEncryptionAlgorithm"/>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#a"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageIntegrity"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#imageData"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DriversLicense"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+    <swrl:argument2 rdf:resource="#b"/>
+  </swrl:IndividualPropertyAtom>
   <swrl:Imp rdf:ID="MapSecNotAccessControl">
     <swrl:head>
       <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Availability"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
           </swrl:ClassAtom>
         </rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:head>
     <swrl:body>
@@ -805,69 +823,55 @@
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
     <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
     <swrl:argument2 rdf:resource="#z"/>
-  </swrl:IndividualPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+  </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Fingerprint"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#UserAuthentication"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
   </swrl:ClassAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DebitCard"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
   <swrl:ClassAtom>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#KeyInformationProt"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-    <swrl:argument2 rdf:resource="#y"/>
-  </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DriversLicense"/>
     <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Authorization"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
   </swrl:ClassAtom>
   <swrl:Imp rdf:ID="MapPassport">
     <swrl:head>
       <swrl:AtomList>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Passport"/>
+            <swrl:argument1 rdf:resource="#x"/>
           </swrl:ClassAtom>
         </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
             <rdf:rest>
               <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
                     <swrl:argument2 rdf:resource="#z"/>
@@ -875,42 +879,31 @@
                     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
               </swrl:AtomList>
             </rdf:rest>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#x"/>
                 <swrl:argument2 rdf:resource="#y"/>
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-                <swrl:argument1 rdf:resource="#x"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:body>
       <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Passport"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
                 <rdf:first>
@@ -922,7 +915,6 @@
                 </rdf:first>
                 <rdf:rest>
                   <swrl:AtomList>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     <rdf:first>
                       <swrl:DatavaluedPropertyAtom>
                         <swrl:argument2 rdf:resource="#a"/>
@@ -930,30 +922,37 @@
                         <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
                       </swrl:DatavaluedPropertyAtom>
                     </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                   </swrl:AtomList>
                 </rdf:rest>
               </swrl:AtomList>
             </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Passport"/>
-          </swrl:ClassAtom>
-        </rdf:first>
       </swrl:AtomList>
     </swrl:body>
   </swrl:Imp>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DriversLicense"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+    <swrl:argument2 rdf:resource="#y"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
-  </swrl:ClassAtom>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
   <swrl:Imp rdf:ID="MapFingerPrint">
     <swrl:head>
       <swrl:AtomList>
@@ -967,29 +966,495 @@
           <swrl:AtomList>
             <rdf:rest>
               <swrl:AtomList>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
                     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
-                    <swrl:argument2 rdf:resource="#z"/>
                     <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
               </swrl:AtomList>
             </rdf:rest>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
                 <swrl:argument2 rdf:resource="#y"/>
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
+                <swrl:argument1 rdf:resource="#x"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:body>
       <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#biometricSerial"/>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#imageData"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Fingerprint"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Encryption"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+    <swrl:argument2 rdf:resource="#b"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#imageData"/>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#TrafficHiding"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DebitCard"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#TrafficHiding"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#z"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:Imp rdf:ID="MapDataProtocol">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+                        <swrl:argument2 rdf:resource="#b"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataTransferProtocol"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#b"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#NetworkSecurityProtocol"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
+  </swrl:ClassAtom>
+  <swrl:Imp rdf:ID="MapKeyInfoProtocol">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#KeyInformationProt"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+                        <swrl:argument2 rdf:resource="#b"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+                        <swrl:argument2 rdf:resource="#b"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#KeyManagementProtocol"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:Imp rdf:ID="MapSignature">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Signature"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:argument1 rdf:resource="#x"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+                            <swrl:argument2 rdf:resource="#b"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SignatureProtocol"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:argument1 rdf:resource="#x"/>
+                            <swrl:argument2 rdf:resource="#b"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasSignatureAlgorithm"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+  </swrl:Imp>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DriversLicense"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DebitCard"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataIntegrity"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#AccessControl"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:Imp rdf:ID="MapVoice">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Voice"/>
+          </swrl:ClassAtom>
+        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
             <rdf:rest>
@@ -997,11 +1462,40 @@
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#imageData"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
                     <swrl:argument1 rdf:resource="#x"/>
                     <swrl:argument2 rdf:resource="#z"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#soundData"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
               </swrl:AtomList>
             </rdf:rest>
             <rdf:first>
@@ -1015,66 +1509,283 @@
         </rdf:rest>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Fingerprint"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Voice"/>
             <swrl:argument1 rdf:resource="#x"/>
           </swrl:ClassAtom>
         </rdf:first>
       </swrl:AtomList>
     </swrl:body>
   </swrl:Imp>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+    <swrl:argument2 rdf:resource="#a"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:Imp rdf:ID="MapEncryption">
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasEncryptionAlgorithm"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:argument2 rdf:resource="#b"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+                            <swrl:argument1 rdf:resource="#x"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#EncryptionProtocol"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Encryption"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:argument1 rdf:resource="#x"/>
+                            <swrl:argument2 rdf:resource="#b"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
   <swrl:ClassAtom>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Encryption"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
+    <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
   <swrl:IndividualPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
     <swrl:argument2 rdf:resource="#z"/>
   </swrl:IndividualPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
-  </swrl:DatavaluedPropertyAtom>
+  <swrl:Imp rdf:ID="MapCookie">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#value"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#path"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#name"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Cookie"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Cookie"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#path"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#value"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#name"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
+      </swrl:AtomList>
+    </swrl:body>
+  </swrl:Imp>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument2 rdf:resource="#y"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#biometricSerial"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
   </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authorization"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Anonymity"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
   </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+  <swrl:Imp rdf:ID="MapSecNotAuthorization">
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authorization"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:body>
+    <swrl:head>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Authorization"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+  </swrl:Imp>
+  <swrl:ClassAtom>
     <swrl:argument1 rdf:resource="#x"/>
-  </swrl:IndividualPropertyAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#NetworkSecurityProtocol"/>
+  </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
     <swrl:argument2 rdf:resource="#z"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-  </swrl:IndividualPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+  </swrl:DatavaluedPropertyAtom>
   <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Fingerprint"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataTransferProtocol"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Fingerprint"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
   <swrl:ClassAtom>
@@ -1083,692 +1794,27 @@
   </swrl:ClassAtom>
   <swrl:ClassAtom>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageAuthentication"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageIntegrity"/>
   </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
-  </swrl:ClassAtom>
-  <swrl:Imp rdf:ID="MapDataProtocol">
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataTransferProtocol"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-                <swrl:argument2 rdf:resource="#y"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-                        <swrl:argument2 rdf:resource="#b"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:body>
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#NetworkSecurityProtocol"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-                        <swrl:argument2 rdf:resource="#b"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:head>
-  </swrl:Imp>
-  <swrl:Imp rdf:ID="MapKeyInfoProtocol">
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-                <swrl:argument2 rdf:resource="#y"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#b"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#KeyInformationProt"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-      </swrl:AtomList>
-    </swrl:body>
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-                        <swrl:argument2 rdf:resource="#b"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#KeyManagementProtocol"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-      </swrl:AtomList>
-    </swrl:head>
-  </swrl:Imp>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#UserAuthentication"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#CreditCard"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:Imp rdf:ID="MapSignature">
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Signature"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest>
-                      <swrl:AtomList>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                        <rdf:first>
-                          <swrl:IndividualPropertyAtom>
-                            <swrl:argument1 rdf:resource="#x"/>
-                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-                            <swrl:argument2 rdf:resource="#b"/>
-                          </swrl:IndividualPropertyAtom>
-                        </rdf:first>
-                      </swrl:AtomList>
-                    </rdf:rest>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:body>
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SignatureProtocol"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest>
-                      <swrl:AtomList>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                        <rdf:first>
-                          <swrl:IndividualPropertyAtom>
-                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-                            <swrl:argument1 rdf:resource="#x"/>
-                            <swrl:argument2 rdf:resource="#b"/>
-                          </swrl:IndividualPropertyAtom>
-                        </rdf:first>
-                      </swrl:AtomList>
-                    </rdf:rest>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasSignatureAlgorithm"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:head>
-  </swrl:Imp>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
     <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#EncryptionProtocol"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:Imp rdf:ID="MapVoice">
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Voice"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenSerial"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:head>
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Voice"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#soundData"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#biometricSerial"/>
-                <swrl:argument2 rdf:resource="#y"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:body>
-  </swrl:Imp>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Availability"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#z"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:Imp rdf:ID="MapEncryption">
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#EncryptionProtocol"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest>
-                      <swrl:AtomList>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                        <rdf:first>
-                          <swrl:IndividualPropertyAtom>
-                            <swrl:argument2 rdf:resource="#b"/>
-                            <swrl:argument1 rdf:resource="#x"/>
-                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
-                          </swrl:IndividualPropertyAtom>
-                        </rdf:first>
-                      </swrl:AtomList>
-                    </rdf:rest>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasEncryptionAlgorithm"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:head>
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:IndividualPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:IndividualPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:IndividualPropertyAtom>
-                        <swrl:argument2 rdf:resource="#a"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
-                      </swrl:IndividualPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest>
-                      <swrl:AtomList>
-                        <rdf:first>
-                          <swrl:IndividualPropertyAtom>
-                            <swrl:argument1 rdf:resource="#x"/>
-                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-                            <swrl:argument2 rdf:resource="#b"/>
-                          </swrl:IndividualPropertyAtom>
-                        </rdf:first>
-                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                      </swrl:AtomList>
-                    </rdf:rest>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:IndividualPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:IndividualPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Encryption"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-      </swrl:AtomList>
-    </swrl:body>
-  </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:Imp rdf:ID="MapCookie">
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Cookie"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#value"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#path"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#name"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:head>
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Cookie"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#name"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#value"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#path"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:body>
-  </swrl:Imp>
   <swrl:IndividualPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#z"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:Imp rdf:ID="MapSecNotAuthorization">
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-            <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authorization"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-      </swrl:AtomList>
-    </swrl:body>
-    <swrl:head>
-      <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-            <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Authorization"/>
-          </swrl:ClassAtom>
-        </rdf:first>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-      </swrl:AtomList>
-    </swrl:head>
-  </swrl:Imp>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#z"/>
   </swrl:IndividualPropertyAtom>
   <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#relSecNotation"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasAlgorithm"/>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#y"/>
-  </swrl:DatavaluedPropertyAtom>
+  </swrl:IndividualPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
-    <swrl:argument2 rdf:resource="#z"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-    <swrl:argument2 rdf:resource="#z"/>
-    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#biometricSerial"/>
+    <swrl:argument2 rdf:resource="#y"/>
   </swrl:DatavaluedPropertyAtom>
   <swrl:Imp rdf:ID="MapSecNotExposeControl">
     <swrl:head>
@@ -1787,75 +1833,87 @@
         <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#ExposureControl"/>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+            <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#ExposureControl"/>
           </swrl:ClassAtom>
         </rdf:first>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DriversLicense"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#EncryptionProtocol"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
   <swrl:Imp rdf:ID="MapSmartCard">
     <swrl:head>
       <swrl:AtomList>
-        <rdf:rest>
-          <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument2 rdf:resource="#a"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                  </swrl:AtomList>
-                </rdf:rest>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-              </swrl:AtomList>
-            </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
         <rdf:first>
           <swrl:ClassAtom>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SmartCard"/>
             <swrl:argument1 rdf:resource="#x"/>
           </swrl:ClassAtom>
         </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
+          </swrl:AtomList>
+        </rdf:rest>
       </swrl:AtomList>
     </swrl:head>
     <swrl:body>
       <swrl:AtomList>
         <rdf:rest>
           <swrl:AtomList>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#smartCardValidUntil"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#smartCardIssuer"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                  </swrl:AtomList>
+                </rdf:rest>
+              </swrl:AtomList>
+            </rdf:rest>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#smartCardID"/>
@@ -1863,45 +1921,28 @@
                 <swrl:argument2 rdf:resource="#y"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#smartCardValidUntil"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#smartCardIssuer"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
           </swrl:AtomList>
         </rdf:rest>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SmartCard"/>
             <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SmartCard"/>
           </swrl:ClassAtom>
         </rdf:first>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
-  <swrl:DatavaluedPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasEncryptionAlgorithm"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-  </swrl:DatavaluedPropertyAtom>
+  </swrl:IndividualPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageAuthentication"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+  </swrl:ClassAtom>
   <swrl:Imp rdf:ID="MapCredit">
     <swrl:body>
       <swrl:AtomList>
@@ -1913,52 +1954,58 @@
         </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
                 <rdf:rest>
                   <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                     <rdf:first>
                       <swrl:DatavaluedPropertyAtom>
                         <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
-                        <swrl:argument2 rdf:resource="#a"/>
                         <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#a"/>
                       </swrl:DatavaluedPropertyAtom>
                     </rdf:first>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                   </swrl:AtomList>
                 </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
               </swrl:AtomList>
             </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-                <swrl:argument2 rdf:resource="#y"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
       </swrl:AtomList>
     </swrl:body>
     <swrl:head>
       <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
-          </swrl:ClassAtom>
-        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
             <rdf:rest>
               <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:argument2 rdf:resource="#a"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                  </swrl:AtomList>
+                </rdf:rest>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
                     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
@@ -1966,18 +2013,6 @@
                     <swrl:argument1 rdf:resource="#x"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument2 rdf:resource="#a"/>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
               </swrl:AtomList>
             </rdf:rest>
             <rdf:first>
@@ -1989,88 +2024,95 @@
             </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
-  <swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Fingerprint"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Privacy"/>
   </swrl:ClassAtom>
   <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Availability"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataTransferProtocol"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-    <swrl:argument2 rdf:resource="#y"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-  </swrl:DatavaluedPropertyAtom>
+  </swrl:ClassAtom>
   <swrl:Imp rdf:ID="MapDriversLicense">
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:body>
       <swrl:AtomList>
         <rdf:rest>
           <swrl:AtomList>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
+                <swrl:argument2 rdf:resource="#y"/>
                 <swrl:argument1 rdf:resource="#x"/>
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
-                <swrl:argument2 rdf:resource="#y"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
                 <rdf:rest>
                   <swrl:AtomList>
                     <rdf:first>
                       <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument2 rdf:resource="#a"/>
                         <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+                        <swrl:argument2 rdf:resource="#a"/>
                         <swrl:argument1 rdf:resource="#x"/>
                       </swrl:DatavaluedPropertyAtom>
                     </rdf:first>
                     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
                   </swrl:AtomList>
                 </rdf:rest>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
               </swrl:AtomList>
             </rdf:rest>
           </swrl:AtomList>
         </rdf:rest>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DriversLicense"/>
             <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DriversLicense"/>
           </swrl:ClassAtom>
         </rdf:first>
       </swrl:AtomList>
     </swrl:body>
     <swrl:head>
       <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DriversLicense"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
             <rdf:rest>
               <swrl:AtomList>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
                     <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
                     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
@@ -2078,9 +2120,9 @@
                   <swrl:AtomList>
                     <rdf:first>
                       <swrl:DatavaluedPropertyAtom>
-                        <swrl:argument1 rdf:resource="#x"/>
                         <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
                         <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:argument1 rdf:resource="#x"/>
                       </swrl:DatavaluedPropertyAtom>
                     </rdf:first>
                     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -2090,47 +2132,95 @@
             </rdf:rest>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:argument2 rdf:resource="#y"/>
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#x"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DriversLicense"/>
+          </swrl:ClassAtom>
+        </rdf:first>
       </swrl:AtomList>
     </swrl:head>
   </swrl:Imp>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#bioTokenData"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Availability"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataIntegrity"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#EncryptionProtocol"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Fingerprint"/>
+  </swrl:ClassAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Authorization"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+  </swrl:ClassAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:ClassAtom>
   <swrl:ClassAtom>
     <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#b"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:IndividualPropertyAtom>
     <swrl:argument2 rdf:resource="#z"/>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
-  </swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#supportsSecurityObjective"/>
+  </swrl:IndividualPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
-    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authorization"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#DriversLicense"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
   <swrl:IndividualPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#hasEncryptionAlgorithm"/>
+    <swrl:argument2 rdf:resource="#b"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
   </swrl:IndividualPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DebitCard"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#y"/>
@@ -2138,178 +2228,149 @@
   </swrl:DatavaluedPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
     <swrl:argument2 rdf:resource="#y"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DriversLicense"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Privacy"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#TrafficHiding"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authentication"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Fingerprint"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Badge"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:IndividualPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#UserAuthentication"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
-  </swrl:ClassAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Badge"/>
-    <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
     <swrl:argument2 rdf:resource="#y"/>
     <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
   </swrl:DatavaluedPropertyAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#a"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#enc"/>
+    <swrl:argument1 rdf:resource="#x"/>
+  </swrl:IndividualPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Anonymity"/>
+  </swrl:ClassAtom>
+  <swrl:IndividualPropertyAtom>
+    <swrl:argument2 rdf:resource="#b"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#reqCredential"/>
+  </swrl:IndividualPropertyAtom>
   <swrl:Imp rdf:ID="MapPassword">
     <swrl:head>
       <swrl:AtomList>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Password"/>
-          </swrl:ClassAtom>
-        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#userName"/>
+                <swrl:argument1 rdf:resource="#a"/>
+                <swrl:argument2 rdf:resource="#y"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#passValue"/>
-                    <swrl:argument1 rdf:resource="#x"/>
                     <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#a"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#passValue"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
               </swrl:AtomList>
             </rdf:rest>
+          </swrl:AtomList>
+        </rdf:rest>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:argument1 rdf:resource="#a"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#Password"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+      </swrl:AtomList>
+    </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
+    <swrl:body>
+      <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#LoginWithPassphrase"/>
+            <swrl:argument1 rdf:resource="#a"/>
+          </swrl:ClassAtom>
+        </rdf:first>
+        <rdf:rest>
+          <swrl:AtomList>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
                 <swrl:argument2 rdf:resource="#y"/>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#userName"/>
-                <swrl:argument1 rdf:resource="#x"/>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#loginName"/>
+                <swrl:argument1 rdf:resource="#a"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
-          </swrl:AtomList>
-        </rdf:rest>
-      </swrl:AtomList>
-    </swrl:head>
-    <swrl:body>
-      <swrl:AtomList>
-        <rdf:rest>
-          <swrl:AtomList>
             <rdf:rest>
               <swrl:AtomList>
                 <rdf:first>
                   <swrl:DatavaluedPropertyAtom>
                     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#passphrase"/>
-                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:argument1 rdf:resource="#a"/>
                     <swrl:argument2 rdf:resource="#z"/>
                   </swrl:DatavaluedPropertyAtom>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
               </swrl:AtomList>
             </rdf:rest>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#loginName"/>
-                <swrl:argument2 rdf:resource="#y"/>
-                <swrl:argument1 rdf:resource="#x"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#LoginWithPassphrase"/>
-          </swrl:ClassAtom>
-        </rdf:first>
       </swrl:AtomList>
     </swrl:body>
   </swrl:Imp>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
     <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
-  </swrl:DatavaluedPropertyAtom>
-  <swrl:ClassAtom>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#CreditCard"/>
     <swrl:argument1 rdf:resource="#x"/>
-  </swrl:ClassAtom>
-  <swrl:DatavaluedPropertyAtom>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#a"/>
     <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#expirationDate"/>
   </swrl:DatavaluedPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:argument2 rdf:resource="#a"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#expDate"/>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:argument1 rdf:resource="#x"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physicalTokenID"/>
+    <swrl:argument2 rdf:resource="#y"/>
+  </swrl:DatavaluedPropertyAtom>
+  <swrl:DatavaluedPropertyAtom>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#docAuthority"/>
+    <swrl:argument2 rdf:resource="#y"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:argument2 rdf:resource="#b"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#reqCredential"/>
-  </swrl:IndividualPropertyAtom>
   <swrl:Imp rdf:ID="MapCertificate">
     <swrl:head>
       <swrl:AtomList>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:argument1 rdf:resource="#x"/>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#X.509Certificate"/>
+            <swrl:argument1 rdf:resource="#x"/>
           </swrl:ClassAtom>
         </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
-            <rdf:first>
-              <swrl:DatavaluedPropertyAtom>
-                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#serialNumber"/>
-                <swrl:argument1 rdf:resource="#x"/>
-                <swrl:argument2 rdf:resource="#y"/>
-              </swrl:DatavaluedPropertyAtom>
-            </rdf:first>
             <rdf:rest>
               <swrl:AtomList>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#issuer"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
                 <rdf:rest>
                   <swrl:AtomList>
                     <rdf:first>
                       <swrl:DatavaluedPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#notBefore"/>
                         <swrl:argument1 rdf:resource="#x"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#notBefore"/>
                         <swrl:argument2 rdf:resource="#a"/>
                       </swrl:DatavaluedPropertyAtom>
                     </rdf:first>
@@ -2320,10 +2381,10 @@
                             <rdf:first>
                               <swrl:DatavaluedPropertyAtom>
                                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#version"/>
+                                <swrl:argument1 rdf:resource="#x"/>
                                 <swrl:argument2>
                                   <swrl:Variable rdf:ID="c"/>
                                 </swrl:argument2>
-                                <swrl:argument1 rdf:resource="#x"/>
                               </swrl:DatavaluedPropertyAtom>
                             </rdf:first>
                             <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -2331,77 +2392,40 @@
                         </rdf:rest>
                         <rdf:first>
                           <swrl:DatavaluedPropertyAtom>
-                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#notAfter"/>
                             <swrl:argument2 rdf:resource="#b"/>
                             <swrl:argument1 rdf:resource="#x"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#notAfter"/>
                           </swrl:DatavaluedPropertyAtom>
                         </rdf:first>
                       </swrl:AtomList>
                     </rdf:rest>
                   </swrl:AtomList>
                 </rdf:rest>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#issuer"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                    <swrl:argument1 rdf:resource="#x"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
               </swrl:AtomList>
             </rdf:rest>
+            <rdf:first>
+              <swrl:DatavaluedPropertyAtom>
+                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#serialNumber"/>
+                <swrl:argument2 rdf:resource="#y"/>
+                <swrl:argument1 rdf:resource="#x"/>
+              </swrl:DatavaluedPropertyAtom>
+            </rdf:first>
           </swrl:AtomList>
         </rdf:rest>
       </swrl:AtomList>
     </swrl:head>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
     <swrl:body>
       <swrl:AtomList>
+        <rdf:first>
+          <swrl:ClassAtom>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#XMLSignatureX509v3Certificate"/>
+            <swrl:argument1 rdf:resource="#x"/>
+          </swrl:ClassAtom>
+        </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
-            <rdf:rest>
-              <swrl:AtomList>
-                <rdf:first>
-                  <swrl:DatavaluedPropertyAtom>
-                    <swrl:argument1 rdf:resource="#x"/>
-                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#certIssuer"/>
-                    <swrl:argument2 rdf:resource="#z"/>
-                  </swrl:DatavaluedPropertyAtom>
-                </rdf:first>
-                <rdf:rest>
-                  <swrl:AtomList>
-                    <rdf:rest>
-                      <swrl:AtomList>
-                        <rdf:first>
-                          <swrl:DatavaluedPropertyAtom>
-                            <swrl:argument2 rdf:resource="#b"/>
-                            <swrl:argument1 rdf:resource="#x"/>
-                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#validUntil"/>
-                          </swrl:DatavaluedPropertyAtom>
-                        </rdf:first>
-                        <rdf:rest>
-                          <swrl:AtomList>
-                            <rdf:first>
-                              <swrl:DatavaluedPropertyAtom>
-                                <swrl:argument2 rdf:resource="#c"/>
-                                <swrl:argument1 rdf:resource="#x"/>
-                                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#certVersion"/>
-                              </swrl:DatavaluedPropertyAtom>
-                            </rdf:first>
-                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-                          </swrl:AtomList>
-                        </rdf:rest>
-                      </swrl:AtomList>
-                    </rdf:rest>
-                    <rdf:first>
-                      <swrl:DatavaluedPropertyAtom>
-                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#validFrom"/>
-                        <swrl:argument1 rdf:resource="#x"/>
-                        <swrl:argument2 rdf:resource="#a"/>
-                      </swrl:DatavaluedPropertyAtom>
-                    </rdf:first>
-                  </swrl:AtomList>
-                </rdf:rest>
-              </swrl:AtomList>
-            </rdf:rest>
             <rdf:first>
               <swrl:DatavaluedPropertyAtom>
                 <swrl:argument1 rdf:resource="#x"/>
@@ -2409,65 +2433,101 @@
                 <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#certSerial"/>
               </swrl:DatavaluedPropertyAtom>
             </rdf:first>
+            <rdf:rest>
+              <swrl:AtomList>
+                <rdf:rest>
+                  <swrl:AtomList>
+                    <rdf:first>
+                      <swrl:DatavaluedPropertyAtom>
+                        <swrl:argument2 rdf:resource="#a"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#validFrom"/>
+                        <swrl:argument1 rdf:resource="#x"/>
+                      </swrl:DatavaluedPropertyAtom>
+                    </rdf:first>
+                    <rdf:rest>
+                      <swrl:AtomList>
+                        <rdf:rest>
+                          <swrl:AtomList>
+                            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                            <rdf:first>
+                              <swrl:DatavaluedPropertyAtom>
+                                <swrl:argument1 rdf:resource="#x"/>
+                                <swrl:argument2 rdf:resource="#c"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#certVersion"/>
+                              </swrl:DatavaluedPropertyAtom>
+                            </rdf:first>
+                          </swrl:AtomList>
+                        </rdf:rest>
+                        <rdf:first>
+                          <swrl:DatavaluedPropertyAtom>
+                            <swrl:argument2 rdf:resource="#b"/>
+                            <swrl:argument1 rdf:resource="#x"/>
+                            <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#validUntil"/>
+                          </swrl:DatavaluedPropertyAtom>
+                        </rdf:first>
+                      </swrl:AtomList>
+                    </rdf:rest>
+                  </swrl:AtomList>
+                </rdf:rest>
+                <rdf:first>
+                  <swrl:DatavaluedPropertyAtom>
+                    <swrl:argument2 rdf:resource="#z"/>
+                    <swrl:argument1 rdf:resource="#x"/>
+                    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#certIssuer"/>
+                  </swrl:DatavaluedPropertyAtom>
+                </rdf:first>
+              </swrl:AtomList>
+            </rdf:rest>
           </swrl:AtomList>
         </rdf:rest>
-        <rdf:first>
-          <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#XMLSignatureX509v3Certificate"/>
-            <swrl:argument1 rdf:resource="#x"/>
-          </swrl:ClassAtom>
-        </rdf:first>
       </swrl:AtomList>
     </swrl:body>
   </swrl:Imp>
-  <swrl:ClassAtom>
-    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#DataIntegrity"/>
-    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
-  </swrl:ClassAtom>
-  <swrl:IndividualPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#documentation"/>
-    <swrl:argument1 rdf:resource="#x"/>
-    <swrl:argument2 rdf:resource="#y"/>
-  </swrl:IndividualPropertyAtom>
   <swrl:DatavaluedPropertyAtom>
-    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#physTokenIssuer"/>
-    <swrl:argument2 rdf:resource="#z"/>
+    <swrl:argument2 rdf:resource="#y"/>
+    <swrl:propertyPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#cardID"/>
     <swrl:argument1 rdf:resource="#x"/>
   </swrl:DatavaluedPropertyAtom>
+  <swrl:ClassAtom>
+    <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authentication"/>
+    <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
+  </swrl:ClassAtom>
   <swrl:Imp rdf:ID="MapSecNotAuthentication">
     <swrl:head>
       <swrl:AtomList>
         <rdf:first>
           <swrl:ClassAtom>
-            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#UserAuthentication"/>
+            <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
           </swrl:ClassAtom>
         </rdf:first>
         <rdf:rest>
           <swrl:AtomList>
-            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
             <rdf:first>
               <swrl:ClassAtom>
-                <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageAuthentication"/>
                 <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#SecurityObjective"/>
+                <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-nrl.owl#MessageAuthentication"/>
               </swrl:ClassAtom>
             </rdf:first>
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
           </swrl:AtomList>
         </rdf:rest>
       </swrl:AtomList>
     </swrl:head>
     <swrl:body>
       <swrl:AtomList>
-        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
         <rdf:first>
           <swrl:ClassAtom>
             <swrl:classPredicate rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#SecurityNotation"/>
             <swrl:argument1 rdf:resource="http://www.qualipso.org/ontologies/credential-security-daml.owl#Authentication"/>
           </swrl:ClassAtom>
         </rdf:first>
+        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
       </swrl:AtomList>
     </swrl:body>
+    <swrla:isRuleEnabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean"
+    >true</swrla:isRuleEnabled>
   </swrl:Imp>
 </rdf:RDF>
 
-<!-- Created with Protege (with OWL Plugin 3.4, Build 516)  http://protege.stanford.edu -->
+<!-- Created with Protege (with OWL Plugin 3.4, Build 519)  http://protege.stanford.edu -->
